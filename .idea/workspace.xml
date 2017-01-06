@@ -24,7 +24,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app-2/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-1296">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -188,7 +188,7 @@
       <workItem from="1483500587538" duration="344000" />
       <workItem from="1483501721833" duration="47000" />
       <workItem from="1483670219231" duration="148000" />
-      <workItem from="1483670393220" duration="185000" />
+      <workItem from="1483670393220" duration="280000" />
     </task>
     <task id="LOCAL-00001" summary="Add files via upload">
       <created>1483499633766</created>
@@ -211,11 +211,18 @@
       <option name="project" value="LOCAL" />
       <updated>1483500623961</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add files via upload">
+      <created>1483670595523</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1483670595523</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4090000" />
+    <option name="totallyTimeSpent" value="4185000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1370" height="754" extended-state="0" />
@@ -336,7 +343,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app-2/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-1296">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
