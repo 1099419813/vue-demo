@@ -15,8 +15,65 @@
     </head>
     <body>
       <div id="app">
-        <user></user>  
+        <users></users>  
       </div>
+      <template id="users">
+          <h1>Users</h1>
+          <form>
+            <input type="text" v-model='newUser.name' placeholder="enter name">
+            <br>
+            <input type="text" v-model='newUser.email' placeholder="enter email">
+            <br>
+            <input type="button" value="add" v-on:click='addUser'>
+          </form>
+          <ul>
+            <li v-for="user in users">
+              {{user.name}}:{{user.email}}
+            </li>
+          </ul>
+        </div>
+      </template>
+
       <script src="vue.js"></script>
+      <script>
+        Vue.component('users',{
+          template:'#users',
+          data:function(){
+            return {
+                   newUser: {},
+                   users: [
+                     {
+                       name: 'wgf1',
+                       email: 'wgf1@163.com',
+                       contacted: false
+                     },
+                     {
+                       name: 'wgf2',
+                       email: 'wgf2@163.com',
+                       contacted: false
+                     },
+                     {
+                       name: 'wgf3',
+                       email: 'wgf3@163.com',
+                       contacted: false
+                     }
+                   ]
+           }
+          },
+          mehtods:{
+            addUser:function(){
+              var obj={
+                  name:this.newUser.name,
+                  email:this.newUser.email,
+                  contacted:false
+                };
+              this.users.push(obj);
+            }
+          }
+        });
+        new Vue({
+          el:'#app'
+        })
+      </script>
     </body>
 </html>
