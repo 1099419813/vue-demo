@@ -11,6 +11,9 @@
             color: #2c3e50;
             margin-top: 60px;
           }
+          .contacted{
+              text-decoration: line-through;
+          }
         </style>
     </head>
     <body>
@@ -18,6 +21,7 @@
         <users></users>  
       </div>
       <template id="users">
+        <div>
           <h1>Users</h1>
           <form>
             <input type="text" v-model='newUser.name' placeholder="enter name">
@@ -28,7 +32,11 @@
           </form>
           <ul>
             <li v-for="user in users">
-              {{user.name}}:{{user.email}}
+              <input type="checkbox" class="toggle" v-model="user.contacted">
+                <span :class="{contacted: user.contacted}">
+                  {{user.name}}:{{user.email}}
+                  <input type="button" v-on:click="deleteUser(user)" value="删除">
+                </span>
             </li>
           </ul>
         </div>
@@ -68,6 +76,8 @@
                   contacted:false
                 };
               this.users.push(obj);
+            deleteUser:function (user) {
+                    this.users.splice(this.users.indexOf(user),1);
             }
           }
         });
