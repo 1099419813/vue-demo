@@ -1,25 +1,29 @@
 #app{
     background: #eaeaea;
 }
+
 .header{
     height: 100px;
     line-height: 100px;
     border-bottom: 1px solid #88888a;
 }
-.sideBar{
 
-    border-right: 1px solid #88888a;
-}
 .sideBar ul{
     padding: 0;
     margin: 10px 0;
 }
+
 .sideBar li{
     list-style: none;
     margin-top: 10px;
     border: 1px solid #88888a;
     background: #fff;
 }
+
 .sideBar li a{
     display: block;
+}
+
+.main{
+    border-left:1px solid #88888a;
 }
