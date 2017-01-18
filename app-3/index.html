@@ -33,10 +33,8 @@
           <ul>
             <li v-for="user in users">
               <input type="checkbox" class="toggle" v-model="user.contacted">
-                <span :class="{contacted: user.contacted}">
-                  {{user.name}}:{{user.email}}
-                  <input type="button" v-on:click="deleteUser(user)" value="删除">
-                </span>
+              <span :class="{contacted: user.contacted}">{{user.name}}:{{user.email}}</span>
+              <input type="button" v-on:click="deleteUser(user)" value="删除">
             </li>
           </ul>
         </div>
@@ -68,7 +66,7 @@
                    ]
            }
           },
-          mehtods:{
+          methods:{
             addUser:function(){
               var obj={
                   name:this.newUser.name,
