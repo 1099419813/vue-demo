@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>02-嵌套路由</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app" class="container text-center">
+    <div class="row">
+        <div class="header col-md-12 col-sm-12 col-xs-12">
+            <h1>Vue + vue-router 02</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="sideBar col-md-2 col-sm-2">
+            <ul>
+                <!-- 4.使用 router-link 组件来导航-->
+                <li>
+                    <router-link to="/home">Home</router-link>
+                </li>
+                <li>
+                    <router-link to="/about">About</router-link>
+                </li>
+            </ul>
+        </div>
+        <div class="main col-md-10 col-sm-10">
+            <!-- 5.使用router-view 路由匹配到的组件将渲染在这里-->
+            <router-view></router-view>
+        </div>
+    </div>
+</div>
+
+<template id="Home">
+    <div>
+        <h1>Home</h1>
+        <p>{{msg}}</p>
+        <ul class="list-inline">
+            <!-- 子路由-->
+            <li>
+                <router-link to="/home/product">Product</router-link>
+            </li>
+            <li>
+                <router-link to="/home/show">Show</router-link>
+            </li>
+        </ul>
+        <router-view></router-view>
+    </div>
+</template>
+<template id="h_product">
+    <div>
+        <p>product-01</p>
+        <p>product-02</p>
+        <p>product-03</p>
+    </div>
+</template>
+<template id="h_show">
+    <div>
+        <p>show-01</p>
+        <p>show-02</p>
+        <p>show-03</p>
+    </div>
+</template>
+
+<template id="About">
+    <div>
+        <h1>About</h1>
+        <p>{{msg}}</p>
+    </div>
+</template>
+
+<script src="vue.js"></script>
+<script src="vue-router.js"></script>
+<script>
+    //1.创建（路由）组件
+    var Home = {
+        template: '#Home',
+        data: function () {
+            return {
+                msg: 'showing "Home" component'
+            }
+        }
+    }
+    var H_Product = {
+        template: '#h_product'
+    }
+    var H_Show = {
+        template: '#h_show'
+    }
+    var About = {
+        template: '#About',
+        data: function () {
+            return {
+                msg: 'showing "About" component'
+            }
+        }
+    }
+    //2.定义路由 ==> 每个路由应该映射一个组件。
+    var routes = [
+        {
+            path: '/home',
+            component: Home,
+            children: [
+                {
+                    path: '/home/product',
+                    component: H_Product
+                },
+                {
+                    path: '/home/show',
+                    component: H_Show
+                }
+            ]
+        },
+        {path: '/about', component: About}
+    ]
+    //3.创建router实例
+    var router = new VueRouter({
+        routes: routes
+    })
+    //4.创建和挂载根实例
+    var vm = new Vue({
+        router
+    }).$mount('#app')
+</script>
+</body>
+</html>
